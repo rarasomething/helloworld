@@ -862,7 +862,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 9%);
+  background: color-mix(in srgb, var(--background-color), transparent 7%);
   position: absolute;
   inset: 0;
   z-index: 2;
