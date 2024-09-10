@@ -2043,7 +2043,7 @@ section,
         line-height: 35px;
 }
         .joinhero{
-      font-size: 72px;
+      font-size: 72px !important;
     }
 .mobb {
   display: block !important;
