@@ -2045,6 +2045,10 @@ section,
         .joinhero{
       font-size: 72px;
     }
+    .mobb{
+      display: block;
+      margin: 0 auto;
+    }
 }
 
     .pinkText {
