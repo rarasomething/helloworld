@@ -2052,6 +2052,9 @@ section,
   margin-right: auto !important;
   text-align: center !important;
 }
+.footer{
+  font-size: 11px;
+}
 }
 
     .pinkText {
