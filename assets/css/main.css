@@ -1999,7 +1999,13 @@ section,
 
   text-align: justify;
 }
+.mobh{
+  display: none;
+}
 @media only screen and (max-width: 576px) {
+  .mobh{
+    display: block;
+  }
     #typing-text {
         font-size: 2vh; 
         text-align: center;
