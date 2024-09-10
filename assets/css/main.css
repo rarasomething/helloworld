@@ -2000,11 +2000,11 @@ section,
   text-align: justify;
 }
 .mobh{
-  display: none;
+  display: none !important;
 }
 @media only screen and (max-width: 576px) {
   .mobh{
-    display: block;
+    display: block !important;
     font-size: 55px;
   }
     #typing-text {
