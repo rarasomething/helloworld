@@ -53,6 +53,8 @@
             </ul>
           </li>
           <li><a href="join.html">Join Us</a></li>
+          <button id="color-toggle-btn" class="custom-btn">Change Colors?</button>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -60,7 +62,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <main class="main" id="main">
 
 <section id="hero" class="hero section dark-background">
   <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
@@ -405,7 +407,14 @@ typeText();
 </script>
 
 
+<script>
+  const colorToggleButton = document.getElementById('color-toggle-btn');
 
+document.getElementById('color-toggle-btn').addEventListener('click', function() {
+  document.getElementById('main').classList.toggle('color-filter');
+  document.getElementById('color-toggle-btn').classList.toggle('color-filter');
+});
+</script>
 
 
 

@@ -55,7 +55,19 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+    
+
 }
+
+#main{
+  transition: filter 0.3s ease-in-out;
+}
+
+
+.color-filter {
+  filter: hue-rotate(180deg);
+}
+
 
 a {
   color: var(--accent-color);
@@ -2127,4 +2139,35 @@ section,
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
   color: #f0f0f0;
+}
+
+.custom-btn {
+  margin-left: 10px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3); 
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 30px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-3px); 
+}
+
+.custom-btn:active {
+  transform: translateY(0); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.custom-btn:focus {
+  outline: none; 
 }
