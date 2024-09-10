@@ -941,7 +941,7 @@ section,
   width: 80%;
 }
 .about p{
-      text-align: left;
+/*      text-align: left;*/
     font-family: 'Roboto Mono', monospace;
     font-size: 18px;
     line-height: 3.5vh;
@@ -1932,7 +1932,10 @@ section,
       margin-top: 5vh;
       margin-left: 1vh;
     }
-
+    .hero h5{
+      font-size: 27px;
+      margin-top: 29px;
+    }
   @media only screen and (max-width: 1200px) {
     #typing-text {
         font-size: 5.2vh; 
@@ -1945,7 +1948,9 @@ section,
     }
 }
 
-
+    .abouthero{
+      font-size: 62px;
+    }
 @media only screen and (max-width: 908px) {
     #typing-text {
         font-size: 3.8vh; 
@@ -1957,7 +1962,10 @@ section,
         margin-top: 3vh;
     }
 }
+.text-just{
 
+  text-align: justify;
+}
 @media only screen and (max-width: 576px) {
     #typing-text {
         font-size: 2vh; 
@@ -1981,7 +1989,12 @@ section,
   transition: 0.5s;
   border: 2px solid white;
 }
-
+    .abouthero{
+      font-size: 40px;
+    }
+    .hero h5{
+      font-size: 24px;
+    }
 }
 
     .pinkText {
@@ -2022,16 +2035,11 @@ section,
         border-color: #f4f9ff;
       }
     }
-    .abouthero{
-      font-size: 62px;
-    }
+
         .joinhero{
       font-size: 85px;
     }
-    .hero h5{
-      font-size: 27px;
-      margin-top: 29px;
-    }
+
 
 .hero .hero-logo {
   position: relative;
