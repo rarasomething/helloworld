@@ -1969,6 +1969,19 @@ section,
         font-size: 1.8vh;
         margin-top: 2vh;
     }
+    .hero .btn-get-started {
+  color: var(--default-color);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 6px 36px;
+  margin: 30px 0 0 0;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid white;
+}
+
 }
 
     .pinkText {
