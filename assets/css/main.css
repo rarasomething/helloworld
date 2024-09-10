@@ -2045,11 +2045,13 @@ section,
         .joinhero{
       font-size: 72px;
     }
-    .mobb{
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-    }
+.mobb {
+  display: block !important;
+  width: 200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
 }
 
     .pinkText {
