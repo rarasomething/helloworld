@@ -43,24 +43,13 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="#hero">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="about.html#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="projects.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="projects.html#vs">VS exploratory</a></li>
+
             </ul>
           </li>
           <li><a href="join.html" class="active">Join Us</a></li>
@@ -83,6 +72,7 @@
         <!-- Heading below the logo -->
         <h3 class="joinhero"><span class="yellowText">Join( )</span>;</h3>
         <h5 class="greenText">We're currently open for applications!</h5>
+        <h5 class="skyText">Anyone who is interested can apply.</h5>
         <h5 class="apply2">Use the form link below:</h5>
         <a href="https://forms.gle/jnRVowrciBamZ4Xq7" class="btn-get-started">Application Form</a>
       </div>
@@ -143,93 +133,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<script>
-  const textArray = [
-    `<span class="pinkText">print</span>(<span class="yellowText">'Hello, World!'</span>)`,
-    `<span class="blueText">System</span>.<span class="orangeText">out</span>.<span class="pinkText">println</span>(<span class="yellowText">'Hello, World!'</span>);`,
-    `<span class="blueText">Console</span>.<span class="pinkText">WriteLine</span>(<span class="yellowText">'Hello, World!'</span>);`,
-    `<span class="pinkText">printf</span>(<span class="yellowText">'Hello, World!'</span>);`,
-    `<span class="blueText">cout</span> << <span class="yellowText">'Hello, World!'</span> << <span class="pinkText">endl</span>;`
-  ];
-  const languageArray = ["Python", "Java", "C#", "C", "C++"];
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let delay = 1000; 
-function typeWithColors(currentText, charIndex) {
-    let displayText = "";
-    let visibleChars = 0;
-    let insideTag = false;
-
-    for (let i = 0; i < currentText.length; i++) {
-        const char = currentText[i];
-
-        if (char === "<") {
-            insideTag = true;
-        }
-
-        displayText += char;
-
-        if (char === ">" && insideTag) {
-            insideTag = false;
-            continue;
-        }
-
-        if (!insideTag) {
-            visibleChars++;
-        }
-
-        if (visibleChars >= charIndex) {
-            break;
-        }
-    }
-
-    return displayText;
-}
-
-async function typeText() {
-    const currentText = textArray[textIndex];
-    const currentLanguage = languageArray[textIndex];
-    const typingSpeed = 100;
-
-    const visibleTextLength = currentText.replace(/<[^>]*>/g, "").length;
-
-    if (charIndex === 0) {
-        document.getElementById("language").textContent = currentLanguage;
-        document.getElementById("language").style.opacity = 1;
-    }
-
-    if (charIndex < visibleTextLength) {
-        document.getElementById("typing-text").innerHTML = typeWithColors(currentText, charIndex + 1);
-        charIndex++;
-    } else if (charIndex === visibleTextLength) {
-        await new Promise(r => setTimeout(r, delay));
-
-        document.getElementById("typing-text").style.transition = "opacity 1s ease-in-out";
-        document.getElementById("language").style.transition = "opacity 1s ease-in-out";
-
-        document.getElementById("typing-text").style.opacity = 0;
-        document.getElementById("language").style.opacity = 0;
-
-        await new Promise(r => setTimeout(r, 1000));
-
-        charIndex = 0;
-        textIndex = (textIndex + 1) % textArray.length;
-
-        document.getElementById("typing-text").innerHTML = typeWithColors(textArray[textIndex], charIndex);
-        document.getElementById("typing-text").style.opacity = 1;  // Fade the text back in
-    }
-
-    setTimeout(typeText, typingSpeed);
-}
-
-typeText();
-
-
-</script>
-
-
-
 
 
 
