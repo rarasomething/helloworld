@@ -942,14 +942,14 @@ section,
   background-color: black;
   color:white;
 }
-#vs{
+#vs, #tutoring{
   background-color: black;
   color:white;
 }
-#vs h4{
+#vs h4, #tutoring h4{
   font-size: 32px;
 }
-#vs h5{
+#vs h5, #tutoring h5{
   font-size: 26px;
 }
 #division h5{
