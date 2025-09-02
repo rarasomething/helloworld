@@ -926,6 +926,31 @@ section,
     font-size: 18px;
   }
 }
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+#stats {
+  /* Match your dark sections like #about/#division */
+  background-color: black;
+  color: white;
+}
+
+.stats .stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+}
+
+.stats .stat-number {
+  line-height: 1;
+}
+
+@media (max-width: 576px) {
+  .stats .stat-number {
+    font-size: 2rem; /* keeps big numbers readable on mobile */
+  }
+}
 
 /*--------------------------------------------------------------
 # About Section
