@@ -462,6 +462,41 @@ document.getElementById('color-toggle-btn').addEventListener('click', function()
 });
 </script>
 
+<script>
+  (function(){
+    const els = document.querySelectorAll('.count');
+    if (!('IntersectionObserver' in window) || els.length === 0) return;
+
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    const animate = el => {
+      const target = parseFloat(el.getAttribute('data-to')) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1400; // ms
+      const start = performance.now();
+
+      const step = now => {
+        const p = Math.min((now - start) / duration, 1);
+        const val = Math.round(easeOutCubic(p) * target);
+        el.textContent = val.toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const seen = new WeakSet();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !seen.has(entry.target)) {
+          seen.add(entry.target);
+          animate(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    els.forEach(el => io.observe(el));
+  })();
+</script>
 
 
 </body>
