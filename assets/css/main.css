@@ -2219,3 +2219,63 @@ section,
 .custom-btn:focus {
   outline: none; 
 }
+
+
+/*--------------------------------------------------------------
+# Gallery (grid + lightbox)
+--------------------------------------------------------------*/
+
+/* --- Responsive gallery grid --- */
+#gallery .gallery-grid {
+  --thumb-min: 180px;               /* default (sm) */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-min), 1fr));
+  gap: 12px;
+}
+
+#gallery .gallery-grid[data-size="sm"] { --thumb-min: 180px; }   /* ~6+ columns on desktop */
+#gallery .gallery-grid[data-size="md"] { --thumb-min: 240px; }   /* ~4–5 columns */
+#gallery .gallery-grid[data-size="lg"] { --thumb-min: 320px; }   /* ~3–4 columns */
+
+#gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #0e0e0e;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+#gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;               /* consistent tiles */
+  object-fit: cover;
+  transition: transform .35s ease, filter .35s ease;
+  display: block;
+}
+
+#gallery .gallery-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(.94);
+}
+
+#gallery .gallery-item .caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: .5rem .75rem;
+  font-size: .9rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+#gallery .gallery-item:hover .caption { opacity: 1; }
+
+/* Scope the size-button active state to the gallery so it doesn't affect other btn groups */
+#gallery .btn-group .btn.active {
+  background: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
